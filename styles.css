@@ -1,0 +1,162 @@
+body {
+    background-color: white;
+    background-image: url(background.webp);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    font-size: 25px;
+    color: black;
+}
+
+.intro {
+    width: 100%;
+    aspect-ratio: 1080 / 810;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+.intro h1 {
+    background-color: rgba(132, 148, 255, 0.6);
+    border-radius: 10px;
+    padding: 40px 60px;
+}
+
+.description {
+    max-width: 1100px;
+    padding: 0 60px;
+}
+
+.description p {
+    background-color: rgba(132, 148, 255, 0.6);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+h2 {
+    background-color: rgba(132, 148, 255, 0.6);
+    border-radius: 10px;
+    color: black;
+}
+
+.characters {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(240, 242, 255);
+    border-radius: 20px;
+    color: rgb(51, 51, 51);
+    position: relative;
+
+}
+
+/* Tein hienon border effektin, tämä ei kuitenkaan ole validia, joten jouduin kommentoimaan tämän pois.
+ @property --deg{
+
+    syntax: '<angle>';
+
+    inherits: true;
+
+    initial-value: 0deg;
+
+} 
+
+.border-glow {
+    position: relative;
+}
+
+.border-glow::before,
+.border-glow::after{
+    content: "";
+    position: absolute;
+    inset: -3px;
+    background: conic-gradient(
+        from var(--deg) at center,
+        #00c3ff,
+        #4d0199,
+        #6400c6,
+        #009dcd
+    );
+    border-radius: inherit;
+    z-index: -2;
+    padding: 2px;
+    animation: autoRotate 2s linear infinite; 
+}
+
+.border-glow::after{
+    filter:blur(10px);
+}
+
+ @keyframes autoRotate {
+    to{
+        --deg: 300deg;
+    }
+} 
+*/
+
+.character {
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    padding: 20px 20px;
+    gap: 25px;
+}
+
+
+.character .image {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    min-width: 300px;
+}
+
+/* For tablets */
+@media (max-width: 900px) {
+    body {
+        font-size: 16px;
+    }
+    .intro {
+        font-size: 20px;
+    }
+    .intro h1 {
+    padding: 30px 45px;
+    }
+    .description {
+        max-width: 550px;
+        padding: 0 40px;
+    }
+    .description p {
+        padding: 6px;
+    }
+    .character .image {
+        min-width: 200px;
+    }
+}
+
+/* For phones */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    .intro {
+        font-size: 14px;
+    }
+    .intro h1 {
+    padding: 20px 30px;
+    }
+    .description {
+        max-width: 400px;
+        padding: 0 20px;
+    }
+    .description p {
+        padding: 4px;
+    }
+    .character {
+        flex-direction: column-reverse;
+        gap: 0;
+    }
+    .image_first {
+        flex-direction: column;
+    }
+}
